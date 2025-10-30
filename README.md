@@ -53,7 +53,7 @@ Develop a real-time object recognition system with integrated voice output to as
 - **Total Images**: 4,840
 - **Classes**: 50 (furniture, food, signage, electronics)
 - **Average per Class**: ~100 images
-- **Split**: Train (70%), Validation (15%), Test (15%)
+- **Split**: Train (70%), Test (20%)
 
 ### Data Organization
 The dataset has been collected and organized by team members covering diverse everyday situations:
@@ -72,7 +72,7 @@ pip install -r requirements.txt
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/object-recognition-visually-impaired.git
+git clone https://github.com/MustaphaMensouri/Accessibility_for_the_visually_impaired.git
 cd object-recognition-visually-impaired
 
 # Install dependencies
@@ -81,9 +81,6 @@ pip install -r requirements.txt
 
 ### Usage
 ```bash
-# Run the detection system
-python main.py
-
 # For webcam demo
 python demo_webcam.py
 ```
@@ -131,7 +128,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 License
 
-This project is open-source and available under the [MIT License](LICENSE).
+This project is open-source and available under the [Apache License](LICENSE).
 
 ## 📧 Contact
 
