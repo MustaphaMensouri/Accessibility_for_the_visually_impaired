@@ -37,14 +37,29 @@ while True:
         
         for box in boxes:
             
+            is_right = False
+            is_left = False
+            is_infront = False
+
             x1, y1, x2, y2 = box.xyxy[0].cpu().numpy().astype(int)
             
-            
+            x_mean = (x1 + x2)/2
+            y_mean = (y1 + y2)/2
+
+            if x_mean < frame.shape[1] / 3:
+                is_left = True
+            elif x_mean > frame.shape[1] * 2 / 3:
+                is_right = True
+            if not is_left and not is_right:
+                is_infront = True
+
             conf = box.conf[0].cpu().numpy()
             cls = int(box.cls[0].cpu().numpy())
             
             
             class_name = class_names[cls]
+
+            print(f'There is a {class_name} {is_left* "on the left "}{is_right* "on the right"}{is_infront* "in front"}')
             
             
             color = colors[cls]
@@ -82,12 +97,12 @@ while True:
     
     fps = cap.get(cv2.CAP_PROP_FPS)
     cv2.putText(
-        frame, 
+        frame,
         f'FPS: {fps:.1f}', 
-        (10, 30), 
+        (10, 30),
         cv2.FONT_HERSHEY_SIMPLEX, 
-        1, 
-        (0, 255, 0), 
+        1,
+        (0, 255, 0),
         2
     )
     
