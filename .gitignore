@@ -57,3 +57,6 @@ coverage.xml
 
 # dataset
 dataset/
+
+# voice folder files
+voice/

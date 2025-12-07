@@ -11,7 +11,7 @@ engine = pyttsx3.init()
 # engine.setProperty('rate', 150)  # Speed of speech
 # engine.setProperty('volume', 0.9)  # Volume (0.0 to 1.0)
 
-model = YOLO('models/weights/best.pt')
+model = YOLO('models/yolo11s.pt')
 class_names = model.names
 
 cap = cv2.VideoCapture(0)
